@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useState } from 'react';
 import './App.css';
 
 import Header from './components/Header'
@@ -7,6 +7,20 @@ import Card from './components/Card'
 import Grades from './components/Grades'
 
 function App() {
+  const [initTime, setInitTime] = useState()
+  const [returnTime, setReturnTime] = useState()
+  const [resultTime, setResultTime] = useState()
+  const [resultMins, setResultMins] = useState()
+  const [resultSecs, setResultSecs] = useState()
+  const [inputs, setInputs] = useState({
+    download: null,
+    upload: null,
+    ram: null,
+    cpu: null,
+    memory: null
+})
+  const [isValid, setIsValid] = useState()
+  const [validGrades, setValidGrades] = useState(false)
 
   return (
     <div className="App">
@@ -23,7 +37,24 @@ function App() {
            <Grades /> :
            <Fragment>
               <Instructions />
-              <Card />
+              <Card 
+                setInitTime={setInitTime}
+                setReturnTime={setReturnTime}
+                setResultTime={setResultTime}
+                setResultMins={setResultMins}
+                setResultSecs={setResultSecs}
+                setIsValid={setIsValid}
+                setValidGrades={setValidGrades}
+                setInputs={setInputs}
+                initTime={initTime}
+                returnTime={returnTime}
+                resultTime={resultTime}
+                resultMins={resultMins}
+                resultSecs={resultSecs}
+                isValid={isValid}
+                validGrades={validGrades}
+                inputs={inputs}
+              />
            </Fragment>
           }
             

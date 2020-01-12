@@ -1,23 +1,30 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useState } from 'react';
 import GradeCard from './GradeCard'
 
 const Grades = () => {
+    const [gradeCard, setGradeCard] = useState('reboot')
     return (
     <Fragment>
         <div id="final-results">
-            <h2>Final Grades</h2>
+                {gradeCard !== 'recs' &&
+                    <h2>Final Grades</h2>
+                }
+            
             <div className="grades-container">
-                {localStorage.getItem('resultTime') &&
-                    <GradeCard type={'reboot'} whole={localStorage.getItem('whole')} rem={localStorage.getItem('rem')} />
+                {gradeCard === 'reboot' &&
+                    <GradeCard type={gradeCard} whole={Number(localStorage.getItem('whole'))} rem={localStorage.getItem('rem')} setGradeCard={setGradeCard} />
                 }
-                {localStorage.getItem('dl') && localStorage.getItem('ul') &&
-                    <GradeCard type={'speed'} dl={localStorage.getItem('dl')} ul={localStorage.getItem('ul')} />
+                {gradeCard === 'speed' &&
+                    <GradeCard type={gradeCard} dl={localStorage.getItem('dl')} ul={localStorage.getItem('ul')} setGradeCard={setGradeCard} />
                 }
-                {localStorage.getItem('ram') &&
-                    <GradeCard type={'ram'} ram={localStorage.getItem('ram')}/>
+                {gradeCard === 'ram' &&
+                    <GradeCard type={gradeCard} ram={localStorage.getItem('ram')} setGradeCard={setGradeCard} />
                 }
-                {localStorage.getItem('cpu') && localStorage.getItem('memory') &&
-                    <GradeCard type={'usage'} cpu={localStorage.getItem('cpu')} memory={localStorage.getItem('memory') } />
+                {gradeCard === 'usage' &&
+                    <GradeCard type={gradeCard} cpu={localStorage.getItem('cpu')} memory={localStorage.getItem('memory')} setGradeCard={setGradeCard} />
+                }
+                {gradeCard === 'recs' &&
+                    <GradeCard type={gradeCard}  />
                 }
                 
             </div>

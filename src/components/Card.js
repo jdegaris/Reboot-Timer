@@ -1,20 +1,11 @@
-import React, { Fragment, useState, useEffect } from 'react';
+import React, { Fragment, useEffect } from 'react';
 
-const Card = () => {
-    const [initTime, setInitTime] = useState()
-    const [returnTime, setReturnTime] = useState()
-    const [resultTime, setResultTime] = useState()
-    const [resultMins, setResultMins] = useState()
-    const [resultSec, setResultSecs] = useState()
-    const [inputs, setInputs] = useState({
-        download: null,
-        upload: null,
-        ram: null,
-        cpu: null,
-        memory: null
-    })
-    const [isValid, setIsValid] = useState()
-    const [validGrades, setValidGrades] = useState(false)
+const Card = (props) => {
+
+    const {setInitTime, setReturnTime, setResultTime, setResultMins, setResultSecs,
+        setIsValid, setInputs,  
+        initTime, returnTime, resultTime, resultMins, resultSecs, isValid, validGrades, inputs } = props
+
 
     useEffect(() => {
         if (localStorage.getItem('initTime') !== null) {
@@ -38,7 +29,7 @@ const Card = () => {
                 localStorage.setItem('rem', rem)
             }
         } 
-    }, [])
+    }, [setInitTime, setResultMins, setResultSecs, setResultTime, setReturnTime])
 
 
     const startTimerHandler = () => {
@@ -93,7 +84,7 @@ const Card = () => {
                     <h2>Step 1: <i className="fas fa-check completed"></i></h2>
                     <span><strike>Rebooting Your Computer</strike></span>
                 </div>
-            {resultTime > .99 &&  <h2 className="result">Your Restart Time is: { resultMins } {resultMins === 1 ? "Minute" : "Minuts"} and {resultSec} Seconds</h2>}
+            {resultTime > .99 &&  <h2 className="result">Your Restart Time is: { resultMins } {resultMins === 1 ? "Minute" : "Minutes"} and {resultSecs.toFixed(2) * 100} Seconds</h2>}
                 {resultTime <= .99 &&  <h2 className="result">Your Restart Time is: { resultTime * 100 } Seconds</h2>}
                 </Fragment>
             )} 
@@ -193,6 +184,7 @@ const Card = () => {
                 </div>
 
                 <ol className="actions">
+                    <li>This may not be an exact or steady number. Record the number that appears to be the closest in average.</li>
                     <li>Open the Start Menu and type Task Manager.</li>
                     <li>Select Task Manager. Once open, you may have to click "More Details".</li>
                     <li>Click on the Processes tab if it is not already open.</li>
