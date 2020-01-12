@@ -36,16 +36,16 @@ const GradeCard = (props) => {
             setGradeCard('usage')
         }
         if (type === 'usage') {
-            // localStorage.removeItem('returnTime')
-            // localStorage.removeItem('ram')
-            // localStorage.removeItem('cpu')
-            // localStorage.removeItem('rem')
-            // localStorage.removeItem('resultTime')
-            // localStorage.removeItem('initTime')
-            // localStorage.removeItem('memory')
-            // localStorage.removeItem('dl')
-            // localStorage.removeItem('ul')
-            // localStorage.removeItem('whole')
+            localStorage.removeItem('returnTime')
+            localStorage.removeItem('ram')
+            localStorage.removeItem('cpu')
+            localStorage.removeItem('rem')
+            localStorage.removeItem('resultTime')
+            localStorage.removeItem('initTime')
+            localStorage.removeItem('memory')
+            localStorage.removeItem('dl')
+            localStorage.removeItem('ul')
+            localStorage.removeItem('whole')
             setGradeCard('recs')
         }
     }
