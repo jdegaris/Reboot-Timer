@@ -105,12 +105,12 @@ main p {
     margin-left: 1rem;;
 }
 .card .step-title span {
-    font-size: 2rem;
+    font-size: 1.2rem;
     margin-left: 5%;
 }
 
 .card h2 {
-    font-size: 2rem;
+    font-size: 1.2rem;
     margin-left: 5%;
 }
 .card .step-title {
@@ -201,8 +201,6 @@ button {
     text-align: center; 
     margin: 0 1rem;
 }
-
-
 
 .green {
     box-shadow: 0 8px 16px 12px rgba(0, 145, 43, 0.8);

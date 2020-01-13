@@ -116,7 +116,7 @@ const Card = (props) => {
                     <input className="speed" type="number" name="download" onChange={onChange} maxLength="3" required />
                     Upload Speed
                     <input className="speed" type="number" name="upload" onChange={onChange} maxLength="3" required />
-                    <button type="submit" onClick={inputsHandler} >Enter Scores</button>
+                    <button type="submit" onClick={inputsHandler} >Submit Speeds</button>
                 </form>
                 {isValid === false && <p className="error">This is invalid</p>}
                 </Fragment>
@@ -141,7 +141,7 @@ const Card = (props) => {
                 <Fragment>
                 <div className="step-title">
                     <h2>Step 3: </h2>
-                    <span>Get System Hardware & Usage</span>
+                    <span>Get System Hardware</span>
                 </div>
 
                 <ol className="actions">
@@ -155,7 +155,7 @@ const Card = (props) => {
                 Installed Memory (RAM)
                     <input className="speed" type="number" name="ram" onChange={onChange} maxLength="2" required />    
                 </form>
-                <button type="submit" onClick={inputsHandler} >Enter Amount</button>
+                <button type="submit" onClick={inputsHandler} >Submit Amount</button>
                 {isValid === false && <p className="error">This is invalid</p>}
                 </Fragment> 
             )}
@@ -186,13 +186,13 @@ const Card = (props) => {
                     <li>Open the Start Menu and type Task Manager.</li>
                     <li>Select Task Manager. Once open, you may have to click "More Details".</li>
                     <li>Click on the Processes tab if it is not already open.</li>
-                    <li>Enter the percentage Memory Usage below</li>
+                    <li>Enter the percentage of Memory Usage below</li>
                 </ol>
                 
                 <form className="speed-form">
                     Memory %
                     <input className="speed" type="number" name="memory" onChange={onChange} maxLength="3" required />
-                    <button type="submit" onClick={inputsHandler} >Enter Scores</button>
+                    <button type="submit" onClick={inputsHandler} >Enter Score</button>
                 </form>
                 </Fragment> 
             )}
@@ -205,7 +205,7 @@ const Card = (props) => {
                 
                 {<h2 className="result">You are currently using { localStorage.getItem('memory') }% of Memory </h2>}
                 
-                <button type="submit" onClick={!validGrades} >See Grades</button>
+                <button type="submit" onClick={!validGrades} >Submit Percent</button>
                 </Fragment>
             )}
         </div> 
