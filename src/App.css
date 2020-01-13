@@ -105,7 +105,7 @@ main p {
     margin-left: 1rem;;
 }
 .card .step-title span {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     margin-left: 5%;
 }
 
@@ -156,6 +156,7 @@ button {
 }
 .speed-form input {
     font-size: 2rem;
+    max-width: 20%;
     margin: 1rem;
     text-align: center;
 }
