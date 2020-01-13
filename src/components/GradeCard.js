@@ -1,7 +1,7 @@
 import React, { Fragment, useEffect, useState } from 'react';
 
 const GradeCard = (props) => {
-    const { type, whole, rem, dl, ul, ram, cpu, memory, setGradeCard } = props
+    const { type, whole, rem, dl, ul, ram, memory, setGradeCard } = props
     let secs = Number(rem * 100)
     const [rebootColor, setRebootColor] = useState()
     const [speedColor, setSpeedColor] = useState()
@@ -38,7 +38,6 @@ const GradeCard = (props) => {
         if (type === 'usage') {
             localStorage.removeItem('returnTime')
             localStorage.removeItem('ram')
-            localStorage.removeItem('cpu')
             localStorage.removeItem('rem')
             localStorage.removeItem('resultTime')
             localStorage.removeItem('initTime')
@@ -123,8 +122,8 @@ const GradeCard = (props) => {
     }    
     { type === 'usage' &&
         <div className={memory <= 40 ? 'grade-card green' : memory < 85 && memory > 40 ? 'grade-card yellow' : 'grade-card red' } >      
-            <h2>CPU and Memory Usage:</h2>
-            <p>You entered a CPU usage of {cpu}% and memory usage of {memory}%</p>
+            <h2>Memory Usage:</h2>
+            <p>You entered a memory usage of {memory}%</p>
             {memory <= 40 ? 
                 <p>This is good.</p> : 
             memory <= 75 ?

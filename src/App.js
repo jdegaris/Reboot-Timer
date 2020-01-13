@@ -16,7 +16,6 @@ function App() {
     download: null,
     upload: null,
     ram: null,
-    cpu: null,
     memory: null
 })
   const [isValid, setIsValid] = useState()
@@ -32,7 +31,6 @@ function App() {
            localStorage.getItem('dl') && 
            localStorage.getItem('ul') && 
            localStorage.getItem('ram') && 
-           localStorage.getItem('cpu') && 
            localStorage.getItem('memory') ? 
            <Grades /> :
            <Fragment>

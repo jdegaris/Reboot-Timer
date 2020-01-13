@@ -21,7 +21,7 @@ const Grades = () => {
                     <GradeCard type={gradeCard} ram={localStorage.getItem('ram')} setGradeCard={setGradeCard} />
                 }
                 {gradeCard === 'usage' &&
-                    <GradeCard type={gradeCard} cpu={localStorage.getItem('cpu')} memory={localStorage.getItem('memory')} setGradeCard={setGradeCard} />
+                    <GradeCard type={gradeCard} memory={localStorage.getItem('memory')} setGradeCard={setGradeCard} />
                 }
                 {gradeCard === 'recs' &&
                     <GradeCard type={gradeCard}  />

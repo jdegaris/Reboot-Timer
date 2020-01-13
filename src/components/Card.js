@@ -51,10 +51,8 @@ const Card = (props) => {
         } else if (inputs.ram > 0) {
             setInputs(inputs.ram)
             localStorage.setItem('ram', inputs.ram)
-        } else if (inputs.cpu > 0 && inputs.memory > 0) {
-            setInputs(inputs.cpu)
+        } else if (inputs.memory > 0) {
             setInputs(inputs.memory)
-            localStorage.setItem('cpu', inputs.cpu)
             localStorage.setItem('memory', inputs.memory)
         } else {
             setIsValid(false)
@@ -176,7 +174,7 @@ const Card = (props) => {
 
         {initTime && resultTime && localStorage.getItem('dl') && localStorage.getItem('ul') && localStorage.getItem('ram') && (
             <div className="card-container" >
-            { !localStorage.getItem('cpu') && !localStorage.getItem('memory') && ( 
+            { !localStorage.getItem('memory') && ( 
                 <Fragment>
                 <div className="step-title">
                     <h2>Step 4: </h2>
@@ -188,26 +186,24 @@ const Card = (props) => {
                     <li>Open the Start Menu and type Task Manager.</li>
                     <li>Select Task Manager. Once open, you may have to click "More Details".</li>
                     <li>Click on the Processes tab if it is not already open.</li>
-                    <li>Enter the percentages for CPU and Memory Usage below</li>
+                    <li>Enter the percentage Memory Usage below</li>
                 </ol>
                 
                 <form className="speed-form">
-                    CPU %
-                    <input className="speed" type="number" name="cpu" onChange={onChange} maxLength="3" required />
                     Memory %
                     <input className="speed" type="number" name="memory" onChange={onChange} maxLength="3" required />
                     <button type="submit" onClick={inputsHandler} >Enter Scores</button>
                 </form>
                 </Fragment> 
             )}
-                { localStorage.getItem('cpu') && localStorage.getItem('memory') && (
+                { localStorage.getItem('memory') && (
                 <Fragment>   
                 <div className="step-title">
                     <h2>Step 4: <i className="fas fa-check completed"></i></h2>
                     <span><strike>Get System Usage</strike></span>
                 </div>
                 
-                {<h2 className="result">You are currently using { localStorage.getItem('cpu') }% of CPU and { localStorage.getItem('memory') }% of Memory </h2>}
+                {<h2 className="result">You are currently using { localStorage.getItem('memory') }% of Memory </h2>}
                 
                 <button type="submit" onClick={!validGrades} >See Grades</button>
                 </Fragment>
