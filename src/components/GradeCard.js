@@ -139,7 +139,7 @@ const GradeCard = (props) => {
                     In Task Manager, Memory is a representation of data that displays how much of your computers memory is currently being used.  
                 </p>
             <button type='submit' onClick={prevGradeHandler}>Prev Grade</button>
-            <button type='submit' onClick={nextGradeHandler}>Get Our Recommendations</button>
+            <button className="rec-btn" type='submit' onClick={nextGradeHandler}>Get Our Recommendations</button>
         </div>   
     }    
     { type === 'recs' &&
@@ -156,7 +156,7 @@ const GradeCard = (props) => {
                 CCleaner is the number-one tool for cleaning your PC.
                 It protects your privacy and makes your computer faster and more secure!
             </p>
-                <a target="_blank" href="http://www.ccleaner.com" rel="noopener noreferrer" ><button>Purchase</button></a>
+                <a target="_blank" href="http://www.ccleaner.com" rel="noopener noreferrer" ><button className="rec-btn" >Purchase</button></a>
             </div>
             <div className="recommendation">
                 <h3>We recommend purchasing:</h3>
@@ -169,7 +169,7 @@ const GradeCard = (props) => {
                     Thorough malware and spyware removal. 
                     Specialized ransomware protection.
                 </p>
-                <a target="_blank" href="http://www.malwarebytes.com" rel="noopener noreferrer" ><button>Purchase</button></a>
+                <a target="_blank" href="http://www.malwarebytes.com" rel="noopener noreferrer" ><button className="rec-btn" >Purchase</button></a>
             </div>
         </div>   
         </Fragment>

@@ -263,3 +263,7 @@ button {
     margin-top: 1rem;
     max-width: 80%;
 }
+
+.rec-btn {
+    box-shadow: 0 4px 8px 6px rgba(0, 145, 43, 0.8);
+}
