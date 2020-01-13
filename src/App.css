@@ -137,7 +137,7 @@ main p {
 }
 
 button {
-    width: 50%;
+    min-width: 50%;
     margin: 1rem auto 0 auto;
     padding: .5rem;
     font-size: 1.5rem;
@@ -155,7 +155,7 @@ button {
     height: 100%;
 }
 .speed-form input {
-    font-size: 4rem;
+    font-size: 3rem;
     max-width: 20%;
     margin: 1rem;
     text-align: center;

@@ -200,7 +200,7 @@ const Card = (props) => {
                 <Fragment>   
                 <div className="step-title">
                     <h2>Step 4: <i className="fas fa-check completed"></i></h2>
-                    <span><strike>Get System Usage</strike></span>
+                    <span><strike>Get Virtual Memory Usage</strike></span>
                 </div>
                 
                 {<h2 className="result">You are currently using { localStorage.getItem('memory') }% of Memory </h2>}

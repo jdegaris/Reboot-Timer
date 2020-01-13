@@ -122,21 +122,23 @@ const GradeCard = (props) => {
     }    
     { type === 'usage' &&
         <div className={memory <= 40 ? 'grade-card green' : memory < 85 && memory > 40 ? 'grade-card yellow' : 'grade-card red' } >      
-            <h2>Memory Usage:</h2>
+            <h2>Virtual Memory Usage:</h2>
             <p>You entered a memory usage of {memory}%</p>
-            {memory <= 40 ? 
-                <p>This is good.</p> : 
+            {memory <= 30 ? 
+                <p>We consider this a low percentage of usage.</p> : 
             memory <= 75 ?
-                <p>This is average.</p> :
-                <p>This is bad</p>
+                <p>We consider this a moderate percentage of usage.</p> :
+                <p>
+                    We consider this a high percentage of usage.
+                </p>
 
             }
             
             {/* IF COMPUTER TIME IS AVERAGE */}
             {/* IF COMPUTER TIME IS POOR */}
-            <p>Return time is used to measure overall computer and internet performance</p>
+            <p></p>
             <button type='submit' onClick={prevGradeHandler}>Prev Grade</button>
-            <button type='submit' onClick={nextGradeHandler}>See Recommendations</button>
+            <button type='submit' onClick={nextGradeHandler}>Get Our Recommendations</button>
         </div>   
     }    
     { type === 'recs' &&
@@ -144,6 +146,7 @@ const GradeCard = (props) => {
         <h2>Our Recommendations:</h2>
         <div id='recommendations'>      
             <div className="recommendation">
+                <h3>We recommend purchasing:</h3>
             <img 
                 src="https://cdn.freelogovectors.net/wp-content/uploads/2019/03/ccleanerlogo.png"
                 alt="ccleaner"
@@ -155,6 +158,7 @@ const GradeCard = (props) => {
                 <a target="_blank" href="http://www.ccleaner.com" rel="noopener noreferrer" ><button>Purchase</button></a>
             </div>
             <div className="recommendation">
+                <h3>We recommend purchasing:</h3>
                 <img 
                     src="https://blog.malwarebytes.com/wp-content/uploads/2016/08/MB_LOGO_BLUE.png"
                     alt="malwarebytes"
