@@ -265,5 +265,7 @@ button {
 }
 
 .rec-btn {
-    box-shadow: 0 4px 8px 6px rgba(0, 145, 43, 0.8);
+    background-color: rgba(0, 145, 43, 0.8);
+    color: white;
+    outline: none;
 }
