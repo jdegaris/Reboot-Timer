@@ -131,15 +131,13 @@ const GradeCard = (props) => {
                 <p>
                     We consider this a high percentage of usage.
                 </p>
-                <p>
-                    Memory is a representation of data that displays how much of your computers memory is being used.  
-                </p>
-            </p>
             }
             
             {/* IF COMPUTER TIME IS AVERAGE */}
             {/* IF COMPUTER TIME IS POOR */}
-            <p></p>
+                <p>
+                    Memory is a representation of data that displays how much of your computers memory is being used.  
+                </p>
             <button type='submit' onClick={prevGradeHandler}>Prev Grade</button>
             <button type='submit' onClick={nextGradeHandler}>Get Our Recommendations</button>
         </div>   
