@@ -85,7 +85,7 @@ const GradeCard = (props) => {
         <div className={(dl > 50) ? 'grade-card green' : dl < 50 && dl > 20 ? 'grade-card yellow' : 'grade-card red' } >      
             <h2>Internet Speed:</h2>
             <p>You entered a download speed of {dl}Mbps and upload speed of {ul}Mbps</p>
-            {dl > 100 ?
+            {dl >= 100 ?
             <p>We consider this a great connection</p> :
             dl > 50 && dl < 100 ? 
             <p>We consider this a good connection.</p> :
@@ -136,7 +136,7 @@ const GradeCard = (props) => {
             {/* IF COMPUTER TIME IS AVERAGE */}
             {/* IF COMPUTER TIME IS POOR */}
                 <p>
-                    Memory is a representation of data that displays how much of your computers memory is being used.  
+                    In Task Manager, Memory is a representation of data that displays how much of your computers memory is being used.  
                 </p>
             <button type='submit' onClick={prevGradeHandler}>Prev Grade</button>
             <button type='submit' onClick={nextGradeHandler}>Get Our Recommendations</button>
