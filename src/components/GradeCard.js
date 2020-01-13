@@ -67,10 +67,10 @@ const GradeCard = (props) => {
             <h2>Return Time:</h2>
             <p>You returned to the site in {whole > 0 && `${whole} minutes and `} {Number(secs.toFixed(0))} seconds.</p>
             { (whole <= 1 && secs <= 30) || (whole === 0 && secs <= 60) ? 
-            <p>This is a good time.</p> :
+            <p>We consider this to be a good return time.</p> :
             whole <= 2 && whole >= 1 && secs >30 ?
-            <p>This is an average time.</p> :
-            <p>This is a bad time.</p> 
+            <p>We consider this an average return time.</p> :
+            <p>We consider this a poor return time.</p> 
             }
 
             <p>
@@ -136,7 +136,7 @@ const GradeCard = (props) => {
             {/* IF COMPUTER TIME IS AVERAGE */}
             {/* IF COMPUTER TIME IS POOR */}
                 <p>
-                    In Task Manager, Memory is a representation of data that displays how much of your computers memory is being used.  
+                    In Task Manager, Memory is a representation of data that displays how much of your computers memory is currently being used.  
                 </p>
             <button type='submit' onClick={prevGradeHandler}>Prev Grade</button>
             <button type='submit' onClick={nextGradeHandler}>Get Our Recommendations</button>

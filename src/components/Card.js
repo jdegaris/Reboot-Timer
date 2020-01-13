@@ -192,7 +192,7 @@ const Card = (props) => {
                 <form className="speed-form">
                     Memory %
                     <input className="speed" type="number" name="memory" onChange={onChange} maxLength="3" required />
-                    <button type="submit" onClick={inputsHandler} >Enter Score</button>
+                    <button type="submit" onClick={inputsHandler} >Submit Percentage</button>
                 </form>
                 </Fragment> 
             )}
@@ -205,7 +205,7 @@ const Card = (props) => {
                 
                 {<h2 className="result">You are currently using { localStorage.getItem('memory') }% of Memory </h2>}
                 
-                <button type="submit" onClick={!validGrades} >Submit Percent</button>
+                <button type="submit" onClick={!validGrades} >Submit Percentage</button>
                 </Fragment>
             )}
         </div> 
