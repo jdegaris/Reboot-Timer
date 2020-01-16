@@ -19,10 +19,10 @@ const Card = (props) => {
             if (localStorage.getItem('returnTime') !== null) {
                 let calcTime = (localStorage.getItem('returnTime') - localStorage.getItem('initTime')) / 1000 / 60
                 let rem = (60  * (calcTime % 1)) / 100;
-                rem = rem.toFixed(2)
                 let whole = Number(calcTime.toString().split('.')[0])
                 calcTime = whole + rem
                 setResultMins(whole)
+                setResultSecs(rem)
                 setResultTime(calcTime.toFixed(2))
                 localStorage.setItem('resultTime', calcTime.toFixed(2))
                 localStorage.setItem('whole', whole)
