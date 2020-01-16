@@ -23,7 +23,6 @@ const Card = (props) => {
                 let whole = Number(calcTime.toString().split('.')[0])
                 calcTime = whole + rem
                 setResultMins(whole)
-                setResultSecs(rem)
                 setResultTime(calcTime.toFixed(2))
                 localStorage.setItem('resultTime', calcTime.toFixed(2))
                 localStorage.setItem('whole', whole)
